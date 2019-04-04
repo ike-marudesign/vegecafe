@@ -1,0 +1,895 @@
+@charset "utf-8";
+*{
+	box-sizing: border-box;
+}
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+footer, main, header, #main_pic, #concept,#menu, #menu_pic, nav, section {
+    display: block
+}
+header,main,#top,#concept,#menu,#shop,#map,#news,footer{
+	width:100%;}
+ul {
+	list-style: none;
+}
+body{
+	line-height: 1.1em;
+	font-family: 'Lato', sans-serif;
+	font-family: "Sawarabi Gothic"; 
+}
+
+/********************************
+ナビゲーション非表示
+*************************************/
+#sider_nav{
+	display: none;
+}
+#wrap {
+	width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+	position: relative;
+	background-color: #fff;
+}
+/*<!--スマホ用リンクの基本設定-->*/
+#menu ul li a{
+	text-decoration: none;
+}
+/*スマホ用のcssを記述*/
+/*スマホ用フォントサイズの指定*/
+h2{
+	font-size: 320%;
+	margin-top: 2%;
+	text-shadow: 1px 1px 2px #fff;
+}
+h3{
+	font-size: 270%;
+	text-shadow: 1px 1px 2px #fff;
+}
+
+/*スマホ用ヘッダーの設定*/
+header{
+	height: 3.3%;
+	position: fixed;
+	z-index: 5000;
+	background-color: #fff;
+}
+nav{
+	padding: 0.5% 0;
+}
+nav ul{
+	overflow: hidden;
+	width: 100%;
+}
+header nav li {
+	width:24.5%;
+	float:left;
+}
+nav li a{
+	list-style: none;
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+	font-weight: bold;
+	font-size: 75%;
+	position: relative;
+	padding-left: 1.2em;
+}
+nav li a:link{
+	color: #333;
+}
+nav li a:visited{
+	color: #333;
+}
+nav li a:hover{
+	color: #006a6c;
+}
+nav li a:active{
+	color: #006a6c;
+}
+/*ナビの吹き出し設定*/
+.s-balloon {
+/*表示位置の指定*/
+	position: absolute;
+	top: 1.5em;
+	right: -5em;
+	font-size:70%;
+/*非表示にする*/
+	display: none;
+	opacity: 0;
+/*アニメーションの指定*/
+	animation-duration: 0.3s;
+	animation-name: show-balloon;
+}
+li:hover .s-balloon{
+/*表示する*/
+	display: block;
+	opacity: 1;
+	cursor: pointer;
+}
+#sidr-right-top-button:hover .s-balloon{
+  /*表示する*/
+ 	display: block;
+ 	opacity: 1;
+ 	cursor: pointer;
+	transform: rotate(-90deg);
+}
+#sidr-left-top-button:hover .s-balloon{
+	display: block;
+	opacity: 1;
+	cursor: pointer;
+	transform: rotate(90deg);
+}
+@keyframes show-balloon {
+ /*アニメーションを定義する*/
+  0% {
+    display: none;
+    opacity: 0;
+    top: -30px;
+  }
+  1% {
+    display: inline-block;
+    opacity: 0;
+    top: -30px;
+  }
+100% {
+    display: inline-block;
+    opacity: 1;
+    top: -40px;
+}
+}
+/*メイン写真の真ん中に文字を表示させる*/
+#main_pic{
+	width: 100%;
+	height: auto;
+	position: relative;
+	text-align: center;
+	min-width: 450px;
+	border-left: dotted 0.5px #333;
+	border-right: dotted 0.5px #333;
+}
+h1{
+	font-size: 230%;
+	text-shadow: 3px 3px 3px #fff;
+}
+#main_txt p{
+	font-size: 95%;
+	text-shadow: 2px 1px 2px #fff;
+	margin-left: -0.5em;
+	font-weight: bold;
+}
+/*メイン写真に表示するコメントの動き*/
+main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 3%;
+}
+#main_txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+　background: rgba(163,214,204,0.3);
+}
+#main_txt h1,#main_txt p {
+	position: absolute;
+	width: 100%;
+	transition: .3s;
+}
+#main_txt h1 {
+	top: 50%;
+	left: 23%;
+	}
+#main_txt p {
+	top: 40%;
+	left: 14%;
+}
+/*メイン写真に表示するコメントの動き終わり*/
+
+/*スマホ用コンセプトの設定*/
+#concept{
+	overflow: hidden;
+	height: 280px;
+	position: relative;
+	border-left: dotted 0.5px #333;
+	border-right: dotted 0.5px #333;
+	margin-bottom: 3%;
+	background-image: url(../img/concept/concept_back.png);
+}	
+#concept h2{
+	position: absolute;
+	top: 0;
+	left: 1%;
+	font-size: 180%;
+	line-height: 1.3em;
+}
+#concept h2:first-letter{
+	font-size: 1.5em;
+}
+#txt_01{
+	float: right;
+	width: 85%;
+	position: absolute;
+	top: 23%;
+	left: 3%;
+	z-index: 1000;
+	text-shadow: 2px 2px 2px #fff;
+	background-color: rgba(255,255,255,0.2)
+	}
+#txt_01 h3{
+	font-size: 190%;
+	line-height: 1em;
+	border-bottom: solid 6px #ffe01a;
+}
+#txt_01 p{
+	font-size: 85%;
+	padding-left: 20px;
+	font-weight: bold;
+}
+#txt_02{
+	float: left;
+	width: 75%;
+	position: absolute;
+	top: 59%;
+	left: 23%;
+	z-index: 1000;
+	text-shadow: 2px 2px 2px #fff;
+	background-color: rgba(255,255,255,0.2);
+	padding-right: 2%;
+}
+#txt_02 h3{
+	font-size: 190%;
+	line-height: 1em;
+	border-bottom: solid 6px #ffe01a;
+	text-align: right;
+}
+#txt_02 p{
+	width: 100%;
+	font-size: 85%;
+	padding-left: 10%;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #fff;
+}
+
+/*スマホ用メニューの設定*/
+#menu{
+	height: 290px;
+	position: relative;
+	border-left: dotted 0.5px #333;
+	border-right: dotted 0.5px #333;
+	background-image: url(../img/menu/menu_back_04.gif);
+	margin-bottom: 3%;
+}
+#menu h2{
+	font-size: 180%;
+	padding-top: 4%;
+	padding-left: 1.5%;
+}
+#menu h2:first-letter{
+	font-size:1.5em;
+}
+#img_drink{
+	width:47%;
+	position:absolute;
+	top:14%;
+	left:6%;
+	}
+
+#img_food{
+	width:30%;
+	position:absolute;
+	top:65%;
+	left:3%;
+}
+#img_lunch{
+	width:35%;
+	position:absolute;
+	top:3%;
+	left:60%;
+}
+#img_sweets{
+	width:42%;
+	position:absolute;
+	top:45%;
+	left:49%;
+}
+
+/*リンクmoreの設定*/
+#link_more{
+	position:absolute;
+	top:92%;
+	left:74%;
+	z-index: 1000;	
+}
+#link_more a{
+	font-weight:bold;
+	text-decoration: none;
+	color:#000;
+	font-size:100%;
+}
+
+/*メニューの文字の設定*/
+#menu ul li span{
+	border-bottom:solid 6px #ffe01a;
+	background-color:rgba(255,255,255,0.1);
+}
+#menu ul li{
+	background-color:rgba(255,255,255,0.5);
+}
+#m_drink{
+	position:absolute;
+	top:37%;
+	left:2%;
+	z-index: 2000;
+}
+#m_drink a{
+	font-size:180%;
+	font-weight:bold;
+	text-decoration: none;
+	color:#000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_food{
+	position:absolute;
+	top:79%;
+	left:12%;
+	z-index: 2000;
+}
+#m_food a{
+	font-size:160%;
+	font-weight:bold;
+	text-decoration: none;
+	color:#000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_lunch{
+	position: absolute;
+	top: 20%;
+	left: 55%;
+	z-index: 2000;
+}
+#m_lunch a{
+	font-size: 140%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_sweets{
+	position: absolute;
+	top: 65%;
+	left: 62%;
+	z-index: 2000;
+}
+#m_sweets a{
+	font-size: 170%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+/*２回目のアクセスの設定*/
+#info_box{
+	border-left: dotted 0.5px #333;
+	border-right: dotted 0.5px #333;
+	background-image: url(../img/back1.gif);
+	height: 250px;
+} 
+#info_nav table{
+	margin-left: 15%;
+	background: rgba(255,255,255,0.3);
+	margin-bottom: 10%;
+}
+#info_box h3{
+	font-size: 190%;
+	line-height: 1em;
+	padding-top: 3%;
+	padding-left: 1.3%;
+}
+#info_box h3:first-letter{
+	font-size:1.5em;
+}
+#info_box tr,td{
+	font-size:82%;
+	font-weight: bold;
+}
+#info_box table{
+	margin-bottom:15%;
+	line-height:1.3em;
+	border-top: solid 2px #ffe01a;
+	border-bottom: solid 2px #ffe01a;
+}
+#info_box th{
+	padding-left:1em;
+	padding-right:1em;
+	border-right:1px #000 dotted;
+	line-height:1.3em;
+	font-size:82%;
+}
+#info_box td{
+	padding-left:1em;
+}
+
+/*スマホ用フッターの設定*/
+footer{
+	height:50px;
+}
+footer p{
+	text-align:center;
+	font-size:82%;
+	padding:2px;
+}
+
+
+/*左スライドメニューの設定*/
+.sidr.left table{
+	margin-top:15px;
+	margin-bottom:15px;
+	line-height:2em;
+}
+.sidr.left th{
+	padding-left:15px;
+	padding-right:5px;
+	font-size:85%;
+	border-right:1px #ffffff dotted;
+	line-height:2em;
+}
+.sidr.left td{
+	padding-left:5px;
+	font-size:85%;
+}
+.sidr.left iframe{
+	width:90%;
+	padding-left:15px;
+	padding-top:35px;
+}
+
+/*右スライドメニューの設定*/
+.sidr.right table{
+	margin-top:15px;
+	margin-bottom:50px;
+	line-height:2em;
+}
+.sidr.right th{
+	padding-left:15px;
+	padding-right:5px;
+	font-size:85%;
+	border-right:1px #ffffff dotted;
+	line-height:2em;
+}
+.sidr.right td{
+	padding-left:5px;
+	font-size:85%;
+}
+.sidr.right a{
+	text-decoration: none;
+	color:#ffffff;
+	font-size:110%;
+	text-align:right;
+}
+
+
+/********************************
+ sidr左右ボタン
+*********************************/
+.menu-button {
+    display: block;
+    position:absolute;
+    top: 9em;
+}
+.menu-button.left {
+    left:-2.5em;
+	transform: rotate(-90deg);
+}
+.menu-button.right {
+	right: -1.9em;
+	transform: rotate(90deg);
+}
+#sidr-left-top-button{
+	text-decoration: none;
+	color:#000;
+}
+#sidr-right-top-button{
+	text-decoration: none;
+	color:#000;
+}
+#sidr-left-top-button:hover{
+	color:#006a6c;
+}
+#sidr-right-top-button:hover{
+	color:#006a6c;
+}
+#overlay {
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 999998;
+    display: none;
+}
+.sidr-open #overlay {
+    display: block;
+}
+/* Settings for fullwidth */
+.sidr.fullwidth {
+    width: 100%;
+}
+.sidr.left.fullwidth {
+    left: -100%;
+}
+.sidr.right.fullwidth {
+    right: -100%;
+}
+/* END Settings for fullwidth */
+
+
+/*pc用のcssを記述*/
+@media screen and (min-width:641px){
+body{
+	font-size:16px;
+	}
+#wrap{
+	padding:0 50px;	
+}	
+/*PC用ナビの設定*/
+header{
+	height: 7%;
+	position: fixed;
+	z-index: 5000;
+	background-color: #fff;
+}
+nav{
+	width: 100%;
+	position: relative;
+	height: 38px;
+}
+nav ul{
+	overflow: hidden;
+}
+nav li{
+	width: 21%;
+}
+nav li a{
+	float: left;
+	margin-left: 20%;
+	padding: 10px;
+	font-size: 120%;
+}
+
+/*PC用ヘッダー、ナビの設定*/
+main {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 3%;
+}
+h1{
+	font-size: 670%;
+	text-shadow: 3px 3px 4px #fff;
+}
+#main_pic{
+	position: relative;
+}
+#main_txt p{
+	font-size: 230%;
+	text-shadow: 2px 2px 3px #fff;
+}
+#main_txt {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(163,214,204,0.3);
+  transition: .3s;
+  opacity: 0;
+}
+#main_txt h1,#main_txt p{
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  transition: .5s;
+  line-height: 1.5em;
+}
+
+main:hover #main_txt {
+  opacity: 1;
+}
+main:hover #main_txt h1{
+	top: 41%;
+	left: 25%;
+}
+main:hover #main_txt p {
+	top: 38%;
+	left: 24%;
+}
+main:hover #main_txt h1 {
+	transition-delay: .5s;
+}
+main:hover #main_txt p {
+	transition-delay: .2s;
+}
+	
+/*PC用コンセプトの設定*/
+#concept{
+	height: 480px;
+}
+#concept h2{
+	font-size: 500%;	
+	position: absolute;
+	display: inline-block;
+	text-decoration: none;
+	margin-top: 1%;
+}
+#concept h2::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: #000;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+#concept h2:hover::after {
+  transform: scale(1, 1);
+}
+
+#txt_01{
+	float: right;
+	width: 37%;
+	position: absolute;
+	top: 44%;
+	left: 6%;
+	z-index: 1000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#txt_01 h3{
+	font-size: 280%;
+	line-height: 1.4em;
+	padding-left: 2%;
+}
+#txt_01 p{
+	font-size: 130%;
+	padding: 2% 1% 3% 4%;
+	font-weight: bold;
+	line-height: 1.3em;
+}	
+#txt_02{
+	float: left;
+	width: 37%;
+	position: absolute;
+	top: 32%;
+	left: 55%;
+	z-index: 1000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#txt_02 h3{
+	font-size: 280%;
+	line-height: 1.5em;
+	margin-left: 0;
+	text-align: left;
+}
+#txt_02 p{
+	font-size:130%;
+	font-weight: bold;
+	line-height: 1.3em;
+	padding: 2% 1% 3% 4%;
+}
+	
+/*PC用メニューの設定*/
+#menu{
+	height: 500px;
+	position: relative;
+	border-left: dotted 0.5px #333;
+	border-right: dotted 0.5px #333;
+	margin-bottom: 1%;
+}
+#menu ul li span{
+	border-bottom: solid 8px #ffe01a;
+	background-color: rgba(255,255,255,0.2);
+}
+#menu h2{
+	font-size: 500%;
+	margin-top: 0;
+	position: absolute;
+	display: inline-block;
+	text-decoration: none;
+}
+#menu h2::after {
+	position: absolute;
+	bottom: -35px;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 5px;
+	background: #000;	
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: transform .3s;
+}
+#menu h2:hover::after {
+ 	transform: scale(1, 1);
+}	
+#menu h2:first-letter{
+	font-size: 1.5em;
+}
+#img_drink{
+	width: 31%;
+	position: absolute;
+	top: 24%;
+	left: 1.5%;
+}
+#img_lunch{
+	width: 23%;
+	position: absolute;
+	top: 46.5%;
+	left: 34%;
+}
+#img_food{
+	width: 24%;
+	position: absolute;
+	top: 2%;
+	left: 50%;
+}
+#img_sweets{
+	width: 28%;
+	position: absolute;
+	top: 33%;
+	left: 71%;
+}
+/*リンクmoreの設定*/
+#link_more{
+	position: absolute;
+	top: 7%;
+	left: 85%;
+	z-index: 1000;
+}
+#link_more a{
+	font-weight:bold;
+	text-decoration: none;
+	color:#000;
+	font-size:180%;
+}
+
+/*PC用メニュー文字の設定*/
+#m_drink{
+	position: absolute;
+	top: 38%;
+	left: 22%;
+	z-index: 2000;
+}
+#m_drink a{
+	font-size: 390%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_lunch{
+	position: absolute;
+	top: 70%;
+	left: 48%;
+	z-index: 2000;
+}
+#m_lunch a{
+	font-size: 270%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_food{
+	position: absolute;
+	top: 23%;
+	left: 68%;
+	z-index: 2000;
+}
+#m_food a{
+	font-size: 310%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+#m_sweets{
+	position: absolute;
+	top: 83%;
+	left: 63%;
+	z-index: 2000;
+}
+#m_sweets a{
+	font-size: 350%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 2px #fff;
+}
+	
+/*PC用スライドメニュー*/
+#sidr-left-top-button{
+	font-size: 130%;
+	font-weight: bold;
+}
+#sidr-right-top-button{
+	font-size: 130%;
+	font-weight: bold;
+	}
+.menu-button.left {
+    left: -2em;
+	transform: rotate(-90deg);
+	top: 17.5%;
+}
+.menu-button.right {
+	right: -1.3em;
+	transform: rotate(90deg);
+	top: 17%;
+}
+/*２回目のアクセスの設定*/
+#info_box{
+	height: 400px;
+	position: relative;
+	border: dotted 0.5px #333;
+	overflow: hidden;
+}
+#info_box h3{
+	font-size: 500%;
+	margin-top: -2%;
+	position: absolute;
+	display: inline-block;
+	text-decoration: none;
+}
+#info_box h3::after {
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 5px;
+	background: #000;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: transform .3s;
+}
+#info_box h3:hover::after {
+	transform: scale(1, 1);
+}
+#info_box h3:first-letter{
+	font-size:1.5em;
+}
+#info_nav table{
+	float: left;
+	position: absolute;
+	top: 37%;
+	left: 12%;
+	background: rgba(255,255,255,0.3);
+}
+#info_nav tr,th{
+	font-size:150%;
+	line-height:1.4em;
+}
+#info_nav table th{
+	padding-right:3em;
+	border-right:1px #000 dotted;	
+}
+#info_nav table td{
+	padding-left:3em;	
+}
+footer p{
+	font-size:95%;
+}
+}
